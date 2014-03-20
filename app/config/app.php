@@ -65,7 +65,7 @@ return array(
 	|
 	*/
 
-	'key' => 'YourSecretKey!!!',
+	'key' => '7LHzfyOih3mbo8MtXKxIWsLlj7A5e2LA',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -172,6 +172,8 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+
+		'Way\Generators\GeneratorsServiceProvider',
 
 	),
 

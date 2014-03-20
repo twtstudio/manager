@@ -1,0 +1,25 @@
+{
+  "name": "manager",
+  "version": "0.0.0",
+  "description": "天外天后台框架",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/twtstudio/manager.git"
+  },
+  "author": "liyudong@1992@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/twtstudio/manager/issues"
+  },
+  "homepage": "https://github.com/twtstudio/manager",
+  "devDependencies": {
+    "gulp-uglify": "~0.2.1",
+    "gulp-jade": "~0.4.2",
+    "gulp-coffee": "~1.4.1",
+    "gulp-less": "~1.2.3",
+    "gulp": "~3.5.6"
+  }
+}

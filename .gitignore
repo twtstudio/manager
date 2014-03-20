@@ -10,4 +10,6 @@ Thumbs.db
 *.css
 *.log
 *.html
-/nbproject/private/
+/nbproject
+/node_modules
+*.codekit

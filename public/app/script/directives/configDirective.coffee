@@ -9,3 +9,8 @@ angular.module 'managerApp.directives', []
       (scope, element, attributes) ->
         element.text configFactory.version
   ]
+  .directive 'appCopyright', [
+    'configFactory', (configFactory) ->
+      (scope, element, attributes) ->
+        element.text configFactory.copyright
+  ]

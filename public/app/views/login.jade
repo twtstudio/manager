@@ -1,0 +1,11 @@
+form.form-login(role='form')
+
+  h2.form-login-header 天外天后台登录
+  input.form-control(type='text', name='username', placeholder='帐号', ng-model='user.username', required, autofocus)
+  | {{user.username}}
+  input.form-control(type='password', name='password', placeholder='密码', ng-model='user.password', required)
+  | {{user.password}}
+  label.checkbox
+    input(type='checkbox')
+    | 记住我
+  button.btn.btn-lg.btn-primary.btn-block(ng-click='login()') 登录

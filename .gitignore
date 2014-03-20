@@ -9,4 +9,5 @@ Thumbs.db
 *.js
 *.css
 *.log
+*.html
 /nbproject/private/

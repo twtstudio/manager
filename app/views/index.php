@@ -4,13 +4,22 @@
 	<meta charset="UTF-8">
 	<title app-name></title>
 	<link rel="stylesheet" href="http://s.twtstudio.com/twitter-bootstrap/3.1.1/css/bootstrap.min.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="/app/style/app.css" type="text/css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
 
+	<div class="container" ng-view="">
+
+	</div>
 
 
-
-	
+	<footer class="copy-right">
+		<div class="container">
+			<ul>
+				<li app-copyright></li>
+			</ul>
+		</div>
+	</footer>
 
 	<script src='http://s.twtstudio.com/angular.js/1.2.10/angular.min.js'></script>
 	<!-- <script src='http://s.twtstudio.com/angular-ui-router/0.2.8/angular-ui-router.min.js'></script> -->

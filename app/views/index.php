@@ -29,8 +29,10 @@
 	<script src='http://s.twtstudio.com/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js'></script>
 	<script src='app/script/app.js'></script>
 	<script src='app/script/services/configService.js'></script>
+	<script src='app/script/services/authenticationService.js'></script>
 	<script src='app/script/directives/configDirective.js'></script>
 	<script src='app/script/controllers/loginController.js'></script>
+
 </body>
 
 

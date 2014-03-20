@@ -1,4 +1,4 @@
-angular.module 'managerApp.services', []
+service = angular.module 'managerApp.services', []
   .factory 'configFactory', ->
     {
       name: '天外天后台'

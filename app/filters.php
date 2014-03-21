@@ -35,7 +35,14 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (Auth::guest()) return Redirect::guest('login');
+	if (Auth::guset()) {
+		return Response::json(array(
+			'error' => true,
+			'msg' => '请登录',
+			'content' => null
+		), 401);
+	}
+	// if (Auth::guest()) return Redirect::guest('login');
 });
 
 

@@ -15,7 +15,7 @@ class UsersController extends \BaseController {
 				'error' => true,
 				'msg' => '帐号或密码错误',
 				'content' => null
-			));
+			),401);
 		}
 
 	}

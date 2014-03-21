@@ -13,7 +13,4 @@ controller.controller 'dashboardController', [
             $scope.topNav = ''
             $location.path '/login'
         .error ->
-
-
-
 ]

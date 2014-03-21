@@ -35,6 +35,7 @@
 	<script src='app/script/directives/configDirective.js'></script>
 	<script src='app/script/controllers/dashboardController.js'></script>
 	<script src='app/script/controllers/loginController.js'></script>
+	<script src='app/script/controllers/sidebarController.js'></script>
 	<script>
 		angular.module("managerApp").constant("CSRF_TOKEN", '<?php echo csrf_token(); ?>');
 	</script>

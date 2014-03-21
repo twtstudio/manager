@@ -22,3 +22,4 @@ Route::post('/login', array(
 ));
 
 Route::post('/logout','UsersController@logout');
+Route::resource('sidebar', 'SidebarsController');

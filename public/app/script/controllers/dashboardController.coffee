@@ -1,5 +1,5 @@
 controller.controller 'dashboardController', [
-  '$scope', 'authenticationService', '$cookieStore', ($scope, authenticationService, $cookieStore) ->
+  '$scope', 'authenticationService', '$cookieStore', '$location', ($scope, authenticationService, $cookieStore, $location) ->
 
     $scope.username = authenticationService.auth().username
 
@@ -11,6 +11,7 @@ controller.controller 'dashboardController', [
           if data.error is false and status is 200
             $cookieStore.remove 'app.auth'
             $scope.topNav = ''
+            $location.path '/login'
         .error ->
 
 

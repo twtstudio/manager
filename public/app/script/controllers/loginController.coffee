@@ -1,11 +1,16 @@
 controller
-  .controller 'loginController', ['$scope', 'authenticationService', ($scope, authenticationService) ->
+  .controller 'loginController', ['$scope', 'authenticationService', 'CSRF_TOKEN', ($scope, authenticationService, CSRF_TOKEN) ->
     $scope.user = {
       username: ''
       password: ''
     }
 
     $scope.login = ->
-      authenticationService.login $scope.user
+      auth = {
+        username: $scope.user.username
+        password: $scope.user.password
+        csrf_token: CSRF_TOKEN
+      }
+      authenticationService.login auth
 
   ]

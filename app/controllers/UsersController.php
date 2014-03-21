@@ -17,6 +17,14 @@ class UsersController extends \BaseController {
 				'content' => null
 			),401);
 		}
+	}
 
+	public function logout() {
+		Auth::logout();
+		return Response::json(array(
+			'error' => false,
+			'msg' => '',
+			'content' => '注销成功'
+		));
 	}
 }

@@ -8,7 +8,6 @@
 </head>
 <body >
 
-
 	<!-- main view -->
 	<div class="container" ng-view="">
 
@@ -36,7 +35,9 @@
 	<script src='app/script/directives/configDirective.js'></script>
 	<script src='app/script/controllers/dashboardController.js'></script>
 	<script src='app/script/controllers/loginController.js'></script>
-
+	<script>
+		angular.module("managerApp").constant("CSRF_TOKEN", '<?php echo csrf_token(); ?>');
+	</script>
 </body>
 
 

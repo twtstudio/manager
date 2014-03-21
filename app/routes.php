@@ -10,11 +10,15 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-Blade::setContentTags('<%', '%>');
-Blade::setEscapedContentTags('<%%', '%%>');
+
 Route::get('/', function()
 {
 	return View::make('index');
 });
 
-Route::post('/login','UsersController@login');
+Route::post('/login', array(
+  'before' => 'csrf',
+  'uses' => 'UsersController@login'
+));
+
+Route::post('/logout','UsersController@logout');

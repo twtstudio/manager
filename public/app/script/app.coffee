@@ -1,10 +1,11 @@
 app = angular.module 'managerApp', [
-  'ngRoute', 'ngResource', 'ngSanitize', 'managerApp.services', 'managerApp.directives', 'managerApp.controllers'
+  'ngRoute', 'ngResource', 'ngSanitize', 'ngCookies', 'managerApp.services', 'managerApp.directives', 'managerApp.controllers'
 ]
 
 app.config ($httpProvider) ->
 	$httpProvider.interceptors.push ($location, $q) ->
 		{
+
 			'response': (response) ->
 				response or $q.when response
 
@@ -26,9 +27,11 @@ app.config [
         templateUrl: 'app/views/login.html'
         controller: 'loginController'
       }
-      .otherwise {redirectTo: '/login'}
-
-    $locationProvider.html5Mode true if window.history and window.history.pushState
-
-
+      .otherwise {redirectTo: '/'}
 ]
+
+
+app.run ($rootScope, $location, authenticationService) ->
+  $rootScope.$on '$routeChangeStart', (event, next, current) ->
+    if not authenticationService.auth()? or $location.path() isnt '/login'
+      $location.path '/login'

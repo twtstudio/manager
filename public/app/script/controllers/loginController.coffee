@@ -3,7 +3,6 @@ angular.module 'managerApp.controllers', []
     $scope.user = {
       username: ''
       password: ''
-      remember: false
     }
 
     $scope.login = ->

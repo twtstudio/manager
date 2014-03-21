@@ -3,7 +3,7 @@
 class UsersController extends \BaseController {
 
 	public function login() {
-		if (Auth::attempt(array('username' => Input::json('username',''), 'password' => Input::json('password','')), Input::json('remember', false))) {
+		if (Auth::attempt(array('username' => Input::json('username',''), 'password' => Input::json('password','')))) {
 			$user = Auth::user();
 			return Response::json(array(
 				'error' => false,

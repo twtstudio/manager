@@ -26,6 +26,7 @@
 	<script src='http://s.twtstudio.com/angular.js/1.2.10/angular-route.min.js'></script>
 	<script src='http://s.twtstudio.com/angular.js/1.2.10/angular-resource.min.js'></script>
 	<script src='http://s.twtstudio.com/angular.js/1.2.10/angular-sanitize.min.js'></script>
+	<script src='http://s.twtstudio.com/angular.js/1.2.10/angular-cookies.min.js'></script>
 	<script src='http://s.twtstudio.com/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js'></script>
 	<script src='app/script/app.js'></script>
 	<script src='app/script/services/configService.js'></script>

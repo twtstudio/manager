@@ -9,7 +9,7 @@
 <body >
 
 	<!-- main view -->
-	<div class="container" ng-view="">
+	<div id="main" class="container" ng-view="">
 
 	</div>
 

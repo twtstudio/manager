@@ -3,18 +3,18 @@ app = angular.module 'managerApp', [
 ]
 
 app.config ($httpProvider) ->
-	$httpProvider.interceptors.push ($location, $q) ->
-		{
+  $httpProvider.interceptors.push ($location, $q) ->
+    {
 
-			'response': (response) ->
-				response or $q.when response
+       'response': (response) ->
+        response or $q.when response
 
-			'responseError': (rejection) ->
-				if rejection.status is 401
-					$location.path '/login'
-				$q.reject rejection
+      'responseError': (rejection) ->
+        if rejection.status is 401
+          $location.path '/login'
+        $q.reject rejection
 
-		}
+    }
 
 app.config [
   '$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->

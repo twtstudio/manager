@@ -6,8 +6,10 @@
 	<link rel="stylesheet" href="http://s.twtstudio.com/twitter-bootstrap/3.1.1/css/bootstrap.min.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	<link rel="stylesheet" href="/app/style/app.css" type="text/css" media="screen" title="no title" charset="utf-8">
 </head>
-<body>
+<body >
 
+
+	<!-- main view -->
 	<div class="container" ng-view="">
 
 	</div>
@@ -32,6 +34,7 @@
 	<script src='app/script/services/configService.js'></script>
 	<script src='app/script/services/authenticationService.js'></script>
 	<script src='app/script/directives/configDirective.js'></script>
+	<script src='app/script/controllers/dashboardController.js'></script>
 	<script src='app/script/controllers/loginController.js'></script>
 
 </body>

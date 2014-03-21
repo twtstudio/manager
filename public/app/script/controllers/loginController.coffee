@@ -1,5 +1,5 @@
-angular.module 'managerApp.controllers', []
-  .controller 'loginController', ['$scope', '$location', 'authenticationService', ($scope, $location, authenticationService) ->
+controller
+  .controller 'loginController', ['$scope', 'authenticationService', ($scope, authenticationService) ->
     $scope.user = {
       username: ''
       password: ''

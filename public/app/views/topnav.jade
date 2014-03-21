@@ -1,0 +1,11 @@
+.navbar.navbar-default.navbar-fixed-top(role='navigation')
+	.container
+		.navbar-header
+			a.navbar-brand(href='/', app-name)
+		.navbar-collapse.collapse
+			ul.nav.navbar-nav.navbar-right
+				li
+					a {{username}}
+				li
+					a(href='', ng-click='logout()') 注销
+

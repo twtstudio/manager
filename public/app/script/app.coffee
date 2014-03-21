@@ -20,18 +20,21 @@ app.config [
   '$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
     $routeProvider
       .when '/', {
-        templateUrl: 'app/views/login.html'
-        controller: 'loginController'
+        templateUrl: 'app/views/dashboard.html'
+        controller: 'dashboardController'
       }
       .when '/login', {
         templateUrl: 'app/views/login.html'
         controller: 'loginController'
       }
-      .otherwise {redirectTo: '/'}
+      .otherwise {redirectTo: '/login'}
 ]
 
 
 app.run ($rootScope, $location, authenticationService) ->
   $rootScope.$on '$routeChangeStart', (event, next, current) ->
-    if not authenticationService.auth()? or $location.path() isnt '/login'
-      $location.path '/login'
+    # if not authenticationService.auth()? or $location.path() isnt '/login'
+    #   $location.path '/login'
+
+
+controller = angular.module 'managerApp.controllers', []

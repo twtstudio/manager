@@ -33,8 +33,8 @@ app.config [
 
 app.run ($rootScope, $location, authenticationService) ->
   $rootScope.$on '$routeChangeStart', (event, next, current) ->
-    # if not authenticationService.auth()? or $location.path() isnt '/login'
-    #   $location.path '/login'
+    if not authenticationService.auth()?
+      $location.path '/login'
 
 
 controller = angular.module 'managerApp.controllers', []

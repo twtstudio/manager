@@ -9,7 +9,7 @@
 <body >
 
 	<!-- main view -->
-	<div id="main" class="container" ng-view="">
+	<div id="main" class="container" ui-view>
 
 	</div>
 
@@ -23,8 +23,8 @@
 	</footer>
 
 	<script src='http://s.twtstudio.com/angular.js/1.2.10/angular.min.js'></script>
-	<!-- <script src='http://s.twtstudio.com/angular-ui-router/0.2.8/angular-ui-router.min.js'></script> -->
-	<script src='http://s.twtstudio.com/angular.js/1.2.10/angular-route.min.js'></script>
+	<script src='http://s.twtstudio.com/angular-ui-router/0.2.8/angular-ui-router.min.js'></script>
+	<!--  <script src='http://s.twtstudio.com/anguliar.js/1.2.10/angular-route.min.js'></script> -->
 	<script src='http://s.twtstudio.com/angular.js/1.2.10/angular-resource.min.js'></script>
 	<script src='http://s.twtstudio.com/angular.js/1.2.10/angular-sanitize.min.js'></script>
 	<script src='http://s.twtstudio.com/angular.js/1.2.10/angular-cookies.min.js'></script>

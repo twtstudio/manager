@@ -1,8 +1,15 @@
 app = angular.module 'managerApp', [
-  'ngRoute', 'ngResource', 'ngSanitize', 'ngCookies', 'managerApp.services', 'managerApp.directives', 'managerApp.controllers'
+  'ui.router', 'ngResource', 'ngSanitize', 'ngCookies', 'managerApp.services', 'managerApp.directives', 'managerApp.controllers'
 ]
 
-app.config ($httpProvider) ->
+.run [
+  '$rootScope', '$state', '$stateParams', ($rootScope, $state, $stateParams) ->
+
+    $rootScope.$state = $state
+    $rootScope.$stateParams = $stateParams
+]
+
+.config ($httpProvider) ->
   $httpProvider.interceptors.push ($location, $q) ->
     {
 
@@ -16,22 +23,41 @@ app.config ($httpProvider) ->
 
     }
 
-app.config [
-  '$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
-    $routeProvider
-      .when '/', {
+.config [
+  # '$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
+  #   $routeProvider
+  #     .when '/', {
+  #       templateUrl: 'app/views/dashboard.html'
+  #       controller: 'dashboardController'
+  #     }
+  #     .when '/login', {
+  #       templateUrl: 'app/views/login.html'
+  #       controller: 'loginController'
+  #     }
+  #     .otherwise {redirectTo: '/login'}
+
+  '$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) ->
+    $urlRouterProvider
+      .when '/index', '/'
+      .otherwise '/login'
+
+    $stateProvider
+      .state 'index', {
+        url: '/'
         templateUrl: 'app/views/dashboard.html'
         controller: 'dashboardController'
       }
-      .when '/login', {
+
+      .state 'login', {
+        url: '/login'
         templateUrl: 'app/views/login.html'
         controller: 'loginController'
       }
-      .otherwise {redirectTo: '/login'}
+
 ]
 
 
-app.run ($rootScope, $location, authenticationService) ->
+.run ($rootScope, $location, authenticationService) ->
   $rootScope.$on '$routeChangeStart', (event, next, current) ->
     if not authenticationService.auth()?
       $location.path '/login'

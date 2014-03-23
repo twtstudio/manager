@@ -13,7 +13,7 @@ app = angular.module 'managerApp', [
   $httpProvider.interceptors.push ($location, $q) ->
     {
 
-       'response': (response) ->
+      'response': (response) ->
         response or $q.when response
 
       'responseError': (rejection) ->
@@ -24,18 +24,6 @@ app = angular.module 'managerApp', [
     }
 
 .config [
-  # '$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
-  #   $routeProvider
-  #     .when '/', {
-  #       templateUrl: 'app/views/dashboard.html'
-  #       controller: 'dashboardController'
-  #     }
-  #     .when '/login', {
-  #       templateUrl: 'app/views/login.html'
-  #       controller: 'loginController'
-  #     }
-  #     .otherwise {redirectTo: '/login'}
-
   '$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) ->
     $urlRouterProvider
       .when '/index', '/'
@@ -43,10 +31,26 @@ app = angular.module 'managerApp', [
 
     $stateProvider
       .state 'index', {
+        abstract: true
         url: '/'
         templateUrl: 'app/views/dashboard.html'
         controller: 'dashboardController'
       }
+      .state 'index.dashboard', {
+        url: ''
+        views: {
+          'topnav': {
+            templateUrl: 'app/views/topnav.html'
+          }
+          'sidebar': {
+            # templateUrl: 'app/views/sidebar.html'
+            template: 'sidebar'
+          }
+        }
+
+      }
+
+
 
       .state 'login', {
         url: '/login'
@@ -57,10 +61,10 @@ app = angular.module 'managerApp', [
 ]
 
 
-.run ($rootScope, $location, authenticationService) ->
+.run ($rootScope, $state, authenticationService) ->
   $rootScope.$on '$routeChangeStart', (event, next, current) ->
     if not authenticationService.auth()?
-      $location.path '/login'
+      $state.go 'login'
 
 
 controller = angular.module 'managerApp.controllers', []

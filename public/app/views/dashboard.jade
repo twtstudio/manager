@@ -1,10 +1,9 @@
-div(ng-include='topNav')
+div(ui-view='topnav')
 
 .container
   .row
     //- 侧边栏
     .col-md-3
-      div(ng-controller="sidebarController")
-        accordion
+      div(ui-view='sidebar')
 
 

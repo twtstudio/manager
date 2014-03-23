@@ -27,6 +27,14 @@ class SidebarsTableSeeder extends Seeder {
         'created_at' => new DateTime,
         'updated_at' => new DateTime
       ),
+      array(
+        'id' => 3,
+        'name' => '添加模块',
+        'parent' => 1,
+        'role' => 1,
+        'created_at' => new DateTime,
+        'updated_at' => new DateTime
+      ),
     );
 
     DB::table('sidebars')->insert($sidebars);

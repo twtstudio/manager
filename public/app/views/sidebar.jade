@@ -1,2 +1,5 @@
-accordion
-  accordion-group
+accordion#sidebar
+  accordion-group(ng-repeat='sidebar in sidebars' heading='{{sidebar.name}}')
+    ul.list-group
+      li.list-group-item(ng-repeat='child in sidebar.children')
+        a {{child.name}}

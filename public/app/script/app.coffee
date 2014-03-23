@@ -1,5 +1,5 @@
 app = angular.module 'managerApp', [
-  'ui.router', 'ngResource', 'ngSanitize', 'ngCookies', 'managerApp.services', 'managerApp.directives', 'managerApp.controllers'
+  'ui.router', 'ui.bootstrap', 'ngResource', 'ngSanitize', 'ngCookies', 'managerApp.services', 'managerApp.directives', 'managerApp.controllers'
 ]
 
 .run [

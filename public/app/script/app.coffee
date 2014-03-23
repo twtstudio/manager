@@ -33,6 +33,11 @@ app = angular.module 'managerApp', [
       .state 'index', {
         abstract: true
         url: '/'
+        resolve: {
+          sidebars: ['Sidebar', (Sidebar) ->
+            Sidebar.query()
+          ]
+        }
         templateUrl: 'app/views/dashboard.html'
         controller: 'dashboardController'
       }
@@ -43,14 +48,12 @@ app = angular.module 'managerApp', [
             templateUrl: 'app/views/topnav.html'
           }
           'sidebar': {
-            # templateUrl: 'app/views/sidebar.html'
-            template: 'sidebar'
+            templateUrl: 'app/views/sidebar.html'
+            controller: 'sidebarController'
           }
         }
 
       }
-
-
 
       .state 'login', {
         url: '/login'
@@ -63,8 +66,8 @@ app = angular.module 'managerApp', [
 
 .run ($rootScope, $state, authenticationService) ->
   $rootScope.$on '$routeChangeStart', (event, next, current) ->
-    if not authenticationService.auth()?
-      $state.go 'login'
+    # if not authenticationService.auth()?
+    #   $state.go 'login'
 
 
 controller = angular.module 'managerApp.controllers', []

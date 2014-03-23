@@ -2,6 +2,7 @@
 
 class SidebarsController extends \BaseController {
 
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,7 +10,33 @@ class SidebarsController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$result = array();
+		foreach (Sidebar::all() as $sidebar) {
+			if ($sidebar->parent == 0) {
+				$sidebar = $sidebar->toArray();
+				$sidebars['children'] = array();
+				$result[] = $sidebar;
+			} else {
+				foreach ($result as $k => &$v) {
+					if ($v['id'] == $sidebar->parent) {
+						$v['children'][] = $sidebar->toArray();
+					} else {
+							// throw error
+						return Response::json(array(
+							'error' => array(
+								'type' => 'sys',
+								'msg' => 'sidebar数据库出错'
+							),
+							'content' => null
+						),500);
+					}
+				}
+
+
+			}
+		}
+
+		return Response::json($result);
 	}
 
 	/**
@@ -29,7 +56,7 @@ class SidebarsController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+
 	}
 
 	/**
@@ -40,7 +67,7 @@ class SidebarsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+
 	}
 
 	/**

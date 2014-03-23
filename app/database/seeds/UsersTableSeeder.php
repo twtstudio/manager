@@ -13,6 +13,7 @@ class UsersTableSeeder extends Seeder {
 			array(
 				'username' => 'yudong',
 				'password' => Hash::make('yudong'),
+				'role' => 1,
 				'created_at' => new DateTime,
 				'updated_at' => new DateTime
 			)

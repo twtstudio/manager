@@ -1,4 +1,4 @@
 controller.controller 'sidebarController', [
-  '$scope', ($scope) ->
+  '$scope', 'sidebars', ($scope, sidebars) ->
 
 ]

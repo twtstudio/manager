@@ -12,6 +12,7 @@ class SidebarsTableSeeder extends Seeder {
 
     $sidebars = array(
       array(
+        'id' => 1,
         'name' => '管理模块',
         'parent' => 0,
         'role' => 1,
@@ -19,6 +20,7 @@ class SidebarsTableSeeder extends Seeder {
         'updated_at' => new DateTime
       ),
       array(
+        'id' => 2,
         'name' => '查看模块',
         'parent' => 1,
         'role' => 1,

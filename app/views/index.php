@@ -32,6 +32,7 @@
 	<script src='app/script/app.js'></script>
 	<script src='app/script/services/configService.js'></script>
 	<script src='app/script/services/authenticationService.js'></script>
+	<script src='app/script/services/sidebarService.js'></script>
 	<script src='app/script/directives/configDirective.js'></script>
 	<script src='app/script/controllers/dashboardController.js'></script>
 	<script src='app/script/controllers/loginController.js'></script>
